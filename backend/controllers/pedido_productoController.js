@@ -10,7 +10,7 @@ const getPedidos_productos = asyncHandler(async (req, res) => {
 const setPedido_producto = asyncHandler(async (req, res) => {
     if (!req.body) {
         res.status(400)
-        throw new Error('Por favor teclea la informacion del Pedido')
+        throw new Error('Por favor teclea la informacion del pedido_producto')
     }
 
     const pedido_producto = await Pedido_Producto.create({
@@ -43,7 +43,7 @@ const deletePedido_producto = asyncHandler(async (req, res) => {
    console.log(Pedido_Producto);
     if (!pedido_producto) {
         res.status(400)
-        throw new Error('Pedido_ no encontrada')
+        throw new Error('pedido_producto no encontrado')
     }
     await pedido_producto.remove()
     res.status(200).json(req.params.id)
